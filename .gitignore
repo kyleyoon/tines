@@ -1,0 +1,11 @@
+##############
+#  Original  #
+##############
+
+# directory structure
+bin/*
+src/pkg/*
+!.gitkeep
+
+# goop - go package manager
+.vendor

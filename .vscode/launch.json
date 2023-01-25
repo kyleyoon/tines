@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Terraform Wrapper",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/tines.go",
+            "env": {
+                "TF_LOG": "info"
+            },
+            "args": [],
+            "showLog": true
+        }
+    ]
+}
