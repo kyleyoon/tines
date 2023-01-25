@@ -1,18 +1,11 @@
 # Tines(Terraform-Vault-Wrapper)
 ## Arichtecture
-!["Architecture"](https://wiki.nmn.io/download/attachments/189404549/image2021-2-15_11-22-45.png)
+["Architecture"](architecture.png)
 
 ## Tines 제공기능 
   - Terraform Remote State 저장시 Vault 연동 제공.
   -- AWS - S3, DynamoDB 연동만 제공. 
   - Vault 연동설정은 HCL로 작성하며 Terraform Vault Provider 설정과 동일
-
-## Installation
-### Download
-- linux version
-https://drive.google.com/u/0/uc?id=1-OGmYdB9T1aTBaNugUyVB6OTz79dYYXz&export=download
-- window version
-https://drive.google.com/u/0/uc?id=1-Oh54jD3Wg2v9z9nynoXUsyWiGO006Hx&export=download
 
 ### Requirement
 Terraform 12.29+
@@ -23,7 +16,7 @@ Terraform 12.29+
 terraform {
   backend "s3" {
     bucket         = "test-terraform-state-kr"
-    key            = "btsw-gb/game/terraform.tfstate"
+    key            = "test/terraform.tfstate"
     region         = "ap-northeast-2"
     encrypt        = true
     dynamodb_table = "TestTerraformStateLock"
@@ -41,12 +34,12 @@ https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources
 #### Example
 ```
 provider "vault" {
-  address   = "http://183.110.89.27:8200"
+  address   = "http://1.1.1.1:8200"
   auth_login {
     path       = "auth/approle/login"
     parameters = {
-      role_id   = "5c3fd53a-d5cf-5f73-20b2-fc8d0e79632b"
-      secret_id = "7e29aa92-7bca-6985-191f-a288bec084ed"
+      role_id   = "xxxxxx"
+      secret_id = "xxxxxx"
     }
   }
 }
