@@ -4,7 +4,7 @@
 
 ## Tines 제공기능 
   - Terraform Remote State 저장시 Vault 연동 제공.
-  -- AWS - S3, DynamoDB 연동만 제공. 
+  - AWS - S3, DynamoDB 연동만 제공. 
   - Vault 연동설정은 HCL로 작성하며 Terraform Vault Provider 설정과 동일
 
 ### Requirement
@@ -27,10 +27,13 @@ terraform {
 
 ### Vault Configuration
 tines는 working dicrecotory 에서 "wrapper.hcl" 파일 참조해서 동작.
--- Provider Document
+
+#### Provider Document
 https://registry.terraform.io/providers/hashicorp/vault/latest/docs#provider-arguments
--- Datastrore Document
+
+#### Datastrore Document
 https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/aws_access_credentials
+
 #### Example
 ```
 provider "vault" {
